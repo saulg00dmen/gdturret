@@ -1,10 +1,12 @@
 FROM ubuntu
 MAINTAINER Guang-De Lin
 
-RUN apt-get update \
-    && apt-get install -y transmission-daemon
+RUN apt-get update && \
+    apt-get install -y transmission-daemon jq
 RUN mkdir /downloads /incompletes
 
 EXPOSE 9091 51413 51413/udp
 
-ENTRYPOINT ["/usr/bin/transmission-daemon", "--foreground", "--allowed", "*.*.*.*", "--download-dir", "/downloads", "--incomplete-dir", "/incompletes"]
+ADD . /data/turret
+
+ENTRYPOINT ["/data/turret/entrypoint.sh"]
