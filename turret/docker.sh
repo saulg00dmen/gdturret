@@ -15,14 +15,17 @@ run()
 
 main()
 {
-  if [[ "$1" == "build" ]]; then
-    build "$@"
-  elif [[ "$1" == "run" ]]; then
-    run "$@"
-  else
-    echo "Unknown command: $1"
-    exit 1
-  fi
+  case "$1" in
+    "build")
+      build
+      ;;
+    "run")
+      run
+      ;;
+    *)
+      echo "Unknown command: $1. Aborted"
+      exit 1
+  esac
 }
 
 main "$@"
