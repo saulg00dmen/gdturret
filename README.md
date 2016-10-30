@@ -4,4 +4,8 @@
 
 ## Requirement
 - [Docker](https://docs.docker.com/engine/installation/)
-- [drive](https://github.com/odeke-em/drive). Since `drive` is written in go lang, you may require [platform specific installation methods](https://github.com/odeke-em/drive/blob/master/platform_packages.md)
+- [drive](https://github.com/odeke-em/drive). Since `drive` is written in golang, you may require [platform specific installation methods](https://github.com/odeke-em/drive/blob/master/platform_packages.md)
+
+## Usage
+- Meet the requirement above.
+- `./run.sh`
